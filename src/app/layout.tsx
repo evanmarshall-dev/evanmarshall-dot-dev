@@ -9,8 +9,7 @@
 
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
-import NavigationSimple from '@/components/NavigationSimple';
-// import { Navigation, Footer } from '@/components';
+import { Navigation, Footer } from '@/components';
 import '@/styles/globals.css';
 
 // Load fonts with Next.js optimization
@@ -50,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_CA',
-    url: 'https://evanmarshall.dev',
+    url: 'https://www.evanmarshall.dev',
     title: 'Evan Marshall - Full-Stack Developer',
     description: 'Full-Stack Developer specializing in modern web technologies',
     siteName: 'Evan Marshall Portfolio',
@@ -101,9 +100,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
         {/* Main app structure */}
         <div id="root">
-          <NavigationSimple />
+          <Navigation />
           <main id="main-content">{children}</main>
-          {/* <Footer /> */}
+          <Footer />
         </div>
 
         {/* Google Analytics - placeholder */}

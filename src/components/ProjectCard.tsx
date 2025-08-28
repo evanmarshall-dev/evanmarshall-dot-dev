@@ -7,6 +7,8 @@
  * - Uses Next.js Image component for optimal image loading
  */
 
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
