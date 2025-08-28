@@ -1,0 +1,231 @@
+/* =============================================================================
+   Navigation Component Styles - Mobile-first Responsive Design
+   ============================================================================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-sticky);
+  background-color: var(--color-background);
+  transition: var(--transition-all);
+
+  /* Initial transparent state */
+  &:not(.scrolled) {
+    background-color: transparent;
+  }
+}
+
+.scrolled {
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4) var(--spacing-4);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  /* Larger screens */
+  @media (width >= 640px) {
+    padding: var(--spacing-4) var(--spacing-6);
+  }
+
+  @media (width >= 1024px) {
+    padding: var(--spacing-6) var(--spacing-8);
+  }
+}
+
+/* Logo Styles */
+.logo {
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  transition: var(--transition-all);
+
+  &:hover {
+    color: var(--color-primary-600);
+  }
+
+  @media (width >= 640px) {
+    font-size: var(--font-size-xl);
+  }
+}
+
+.logoText {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-600),
+    var(--color-accent-600)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Desktop Navigation - Hidden on mobile */
+.desktopNav {
+  display: none;
+
+  @media (width >= 768px) {
+    display: block;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (width >= 1024px) {
+    gap: var(--spacing-8);
+  }
+}
+
+.navLink {
+  position: relative;
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  transition: var(--transition-all);
+  padding: var(--spacing-2) 0;
+
+  &:hover {
+    color: var(--color-primary-600);
+  }
+
+  /* Active link indicator */
+  &.active {
+    color: var(--color-primary-600);
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--color-primary-600);
+      border-radius: var(--radius-full);
+    }
+  }
+}
+
+/* Mobile Menu Button - Only visible on mobile */
+.mobileMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @media (width >= 768px) {
+    display: none;
+  }
+}
+
+/* Hamburger Icon */
+.hamburger {
+  position: relative;
+  width: 24px;
+  height: 18px;
+
+  span {
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-text-primary);
+    border-radius: var(--radius-full);
+    transition: var(--transition-base);
+
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: 8px;
+    }
+
+    &:nth-child(3) {
+      top: 16px;
+    }
+  }
+
+  /* Animate to X when open */
+  &.open {
+    span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 8px;
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 8px;
+    }
+  }
+}
+
+/* Mobile Navigation - Only visible when open */
+.mobileNav {
+  display: block;
+  background-color: var(--color-background);
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+
+  @media (width >= 768px) {
+    display: none;
+  }
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: var(--spacing-4);
+}
+
+.mobileNavLink {
+  display: block;
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  padding: var(--spacing-4);
+  transition: var(--transition-all);
+  border-radius: var(--radius-md);
+
+  &:hover {
+    background-color: var(--color-hover);
+    color: var(--color-primary-600);
+  }
+
+  &.active {
+    background-color: var(--color-primary-50);
+    color: var(--color-primary-600);
+
+    [data-theme='dark'] & {
+      background-color: var(--color-primary-950);
+    }
+  }
+}

@@ -1,0 +1,91 @@
+/* =============================================================================
+   Projects Page Styles - Mobile-first Design
+   ============================================================================= */
+
+.page {
+  min-height: calc(100vh - 200px);
+  padding: var(--spacing-20) 0;
+
+  @media (width >= 1024px) {
+    padding: var(--spacing-24) 0;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+
+  @media (width >= 640px) {
+    padding: 0 var(--spacing-6);
+  }
+
+  @media (width >= 1024px) {
+    padding: 0 var(--spacing-8);
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (width >= 1024px) {
+    margin-bottom: var(--spacing-20);
+  }
+}
+
+.title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-6);
+
+  @media (width >= 640px) {
+    font-size: var(--font-size-5xl);
+  }
+
+  @media (width >= 1024px) {
+    font-size: var(--font-size-6xl);
+  }
+}
+
+.description {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+
+  @media (width >= 640px) {
+    font-size: var(--font-size-xl);
+  }
+}
+
+.projectsGrid {
+  display: grid;
+  gap: var(--spacing-8);
+
+  /* Mobile: Single column */
+  grid-template-columns: 1fr;
+
+  /* Tablet: Two columns */
+  @media (width >= 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-10);
+  }
+
+  /* Desktop: Two columns (better for readability than three) */
+  @media (width >= 1024px) {
+    gap: var(--spacing-12);
+  }
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-16);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+}

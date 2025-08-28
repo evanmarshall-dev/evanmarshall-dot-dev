@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+dist
+build
+*.log
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.DS_Store
+*.tgz
+*.tar.gz
+coverage
+.nyc_output
+storybook-static

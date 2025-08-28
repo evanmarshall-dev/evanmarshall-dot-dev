@@ -1,0 +1,130 @@
+{
+  "services": [
+    {
+      "id": "1",
+      "title": "Full-Stack Web Development",
+      "description": "Complete web application development from concept to deployment, including frontend, backend, database design, and DevOps.",
+      "icon": "code",
+      "features": [
+        "Custom web application development",
+        "React, Next.js, and modern JavaScript frameworks",
+        "Node.js and Express backend development",
+        "Database design and optimization",
+        "RESTful API development",
+        "Cloud deployment and DevOps",
+        "Performance optimization",
+        "Security best practices"
+      ],
+      "pricing": {
+        "starting": 150,
+        "currency": "CAD",
+        "unit": "hour"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Frontend Development",
+      "description": "Modern, responsive user interfaces with focus on performance, accessibility, and user experience.",
+      "icon": "palette",
+      "features": [
+        "React and Next.js applications",
+        "TypeScript implementation",
+        "Responsive design and mobile-first approach",
+        "Component libraries and design systems",
+        "Performance optimization",
+        "Accessibility compliance (WCAG 2.1)",
+        "Cross-browser compatibility",
+        "Animation and interactive experiences"
+      ],
+      "pricing": {
+        "starting": 125,
+        "currency": "CAD",
+        "unit": "hour"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Backend & API Development",
+      "description": "Scalable server-side solutions, RESTful APIs, and database architecture for robust applications.",
+      "icon": "server",
+      "features": [
+        "RESTful API development",
+        "GraphQL implementation",
+        "Database design and optimization",
+        "Authentication and authorization",
+        "Third-party integrations",
+        "Microservices architecture",
+        "Caching strategies",
+        "API documentation and testing"
+      ],
+      "pricing": {
+        "starting": 140,
+        "currency": "CAD",
+        "unit": "hour"
+      }
+    },
+    {
+      "id": "4",
+      "title": "DevOps & Cloud Services",
+      "description": "Deployment automation, CI/CD pipelines, cloud infrastructure, and monitoring solutions.",
+      "icon": "cloud",
+      "features": [
+        "CI/CD pipeline setup",
+        "AWS, Google Cloud, and Azure deployment",
+        "Docker containerization",
+        "Infrastructure as Code (Terraform)",
+        "Monitoring and logging",
+        "Performance optimization",
+        "Security audits",
+        "Backup and disaster recovery"
+      ],
+      "pricing": {
+        "starting": 160,
+        "currency": "CAD",
+        "unit": "hour"
+      }
+    },
+    {
+      "id": "5",
+      "title": "Technical Consulting",
+      "description": "Architecture reviews, code audits, technology selection, and strategic technical guidance.",
+      "icon": "lightbulb",
+      "features": [
+        "Technical architecture review",
+        "Code quality audits",
+        "Technology stack recommendations",
+        "Performance optimization strategies",
+        "Security assessments",
+        "Team training and mentoring",
+        "Project planning and estimation",
+        "Technical documentation"
+      ],
+      "pricing": {
+        "starting": 175,
+        "currency": "CAD",
+        "unit": "hour"
+      }
+    },
+    {
+      "id": "6",
+      "title": "Mobile Development",
+      "description": "Cross-platform mobile applications using React Native and modern development practices.",
+      "icon": "smartphone",
+      "features": [
+        "React Native development",
+        "iOS and Android applications",
+        "Cross-platform compatibility",
+        "Native performance optimization",
+        "App store deployment",
+        "Push notifications",
+        "Offline functionality",
+        "Device integration (camera, GPS, etc.)"
+      ],
+      "pricing": {
+        "starting": 135,
+        "currency": "CAD",
+        "unit": "hour"
+      }
+    }
+  ]
+}

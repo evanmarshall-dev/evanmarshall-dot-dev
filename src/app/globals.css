@@ -16,13 +16,8 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* This file is replaced by our custom globals.css in /src/styles/globals.css */
+@import '../styles/globals.css';
 
 * {
   box-sizing: border-box;

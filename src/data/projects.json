@@ -1,0 +1,140 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "E-Commerce Platform",
+      "description": "Full-stack e-commerce solution with React, Node.js, and Stripe integration",
+      "longDescription": "A comprehensive e-commerce platform built with modern web technologies. Features include user authentication, product management, shopping cart, payment processing with Stripe, order tracking, and an admin dashboard. The application demonstrates full-stack development skills including database design, API development, and responsive frontend design.",
+      "image": "data:image/svg+xml,%3Csvg width='800' height='500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='800' height='500' fill='%23f3f4f6'/%3E%3Crect x='50' y='50' width='700' height='400' fill='%23e5e7eb' rx='8'/%3E%3Ccircle cx='150' cy='150' r='30' fill='%236366f1'/%3E%3Crect x='200' y='130' width='400' height='40' fill='%236366f1' rx='4'/%3E%3Crect x='200' y='190' width='500' height='20' fill='%239ca3af' rx='4'/%3E%3Ctext x='400' y='380' text-anchor='middle' font-family='system-ui' font-size='24' fill='%23374151'%3EE-Commerce%3C/text%3E%3C/svg%3E",
+      "images": [
+        "/images/projects/ecommerce-hero.jpg",
+        "/images/projects/ecommerce-dashboard.jpg",
+        "/images/projects/ecommerce-mobile.jpg"
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "Stripe",
+        "Tailwind CSS"
+      ],
+      "githubUrl": "https://github.com/evanmarshall/ecommerce-platform",
+      "liveUrl": "https://ecommerce-demo.evanmarshall.dev",
+      "status": "completed",
+      "featured": true,
+      "category": "full-stack",
+      "year": 2024,
+      "slug": "ecommerce-platform"
+    },
+    {
+      "id": "2",
+      "title": "Task Management App",
+      "description": "Real-time collaborative task management with drag-and-drop functionality",
+      "longDescription": "A modern task management application inspired by tools like Trello and Asana. Built with React and Socket.io for real-time collaboration. Features include drag-and-drop task organization, team collaboration, file attachments, due dates, and progress tracking. The app showcases advanced React patterns, real-time data synchronization, and responsive design principles.",
+      "image": "data:image/svg+xml,%3Csvg width='800' height='500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='800' height='500' fill='%23f0f9ff'/%3E%3Crect x='50' y='50' width='700' height='400' fill='%23e0f2fe' rx='8'/%3E%3Ccircle cx='150' cy='150' r='30' fill='%230ea5e9'/%3E%3Crect x='200' y='130' width='380' height='40' fill='%230ea5e9' rx='4'/%3E%3Crect x='200' y='190' width='450' height='20' fill='%236b7280' rx='4'/%3E%3Ctext x='400' y='380' text-anchor='middle' font-family='system-ui' font-size='20' fill='%23374151'%3ETask Manager%3C/text%3E%3C/svg%3E",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Socket.io",
+        "Express.js",
+        "MongoDB",
+        "CSS Modules"
+      ],
+      "githubUrl": "https://github.com/evanmarshall/task-manager",
+      "liveUrl": "https://tasks.evanmarshall.dev",
+      "status": "completed",
+      "featured": true,
+      "category": "web-development",
+      "year": 2024,
+      "slug": "task-management-app"
+    },
+    {
+      "id": "3",
+      "title": "Weather Analytics API",
+      "description": "RESTful API for weather data aggregation and analytics",
+      "longDescription": "A robust RESTful API that aggregates weather data from multiple sources and provides advanced analytics. Built with Node.js and Express, featuring comprehensive OpenAPI documentation, rate limiting, caching with Redis, and extensive testing. The API demonstrates best practices in backend development including error handling, logging, and security measures.",
+      "image": "data:image/svg+xml,%3Csvg width='800' height='500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='800' height='500' fill='%23fef3c7'/%3E%3Crect x='50' y='50' width='700' height='400' fill='%23fbbf24' rx='8'/%3E%3Ccircle cx='150' cy='150' r='30' fill='%23f59e0b'/%3E%3Crect x='200' y='130' width='320' height='40' fill='%23f59e0b' rx='4'/%3E%3Crect x='200' y='190' width='400' height='20' fill='%236b7280' rx='4'/%3E%3Ctext x='400' y='380' text-anchor='middle' font-family='system-ui' font-size='20' fill='%23374151'%3EWeather API%3C/text%3E%3C/svg%3E",
+      "technologies": [
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "Redis",
+        "OpenAPI",
+        "Jest"
+      ],
+      "githubUrl": "https://github.com/evanmarshall/weather-api",
+      "liveUrl": "https://api.weather.evanmarshall.dev",
+      "status": "completed",
+      "featured": false,
+      "category": "api",
+      "year": 2024,
+      "slug": "weather-analytics-api"
+    },
+    {
+      "id": "4",
+      "title": "Design System Library",
+      "description": "Comprehensive React component library with Storybook documentation",
+      "longDescription": "A complete design system and component library built for scalable web applications. Includes 50+ React components, design tokens, comprehensive Storybook documentation, and automated testing. The library demonstrates advanced component architecture, accessibility compliance, and design system best practices.",
+      "image": "data:image/svg+xml,%3Csvg width='800' height='500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='800' height='500' fill='%23f0fdf4'/%3E%3Crect x='50' y='50' width='700' height='400' fill='%23dcfce7' rx='8'/%3E%3Ccircle cx='150' cy='150' r='30' fill='%2322c55e'/%3E%3Crect x='200' y='130' width='360' height='40' fill='%2322c55e' rx='4'/%3E%3Crect x='200' y='190' width='480' height='20' fill='%236b7280' rx='4'/%3E%3Ctext x='400' y='380' text-anchor='middle' font-family='system-ui' font-size='20' fill='%23374151'%3EDesign System%3C/text%3E%3C/svg%3E",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Storybook",
+        "CSS Modules",
+        "Jest",
+        "Chromatic"
+      ],
+      "githubUrl": "https://github.com/evanmarshall/design-system",
+      "liveUrl": "https://storybook.evanmarshall.dev",
+      "status": "in-progress",
+      "featured": true,
+      "category": "design-system",
+      "year": 2024,
+      "slug": "design-system-library"
+    },
+    {
+      "id": "5",
+      "title": "Mobile Fitness Tracker",
+      "description": "React Native app for fitness tracking with health data integration",
+      "longDescription": "A cross-platform mobile application for fitness tracking built with React Native. Features include workout logging, progress tracking, health data integration, social sharing, and offline capability. The app showcases mobile development skills, state management with Redux, and integration with device APIs.",
+      "image": "data:image/svg+xml,%3Csvg width='800' height='500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='800' height='500' fill='%23fdf2f8'/%3E%3Crect x='50' y='50' width='700' height='400' fill='%23fce7f3' rx='8'/%3E%3Ccircle cx='150' cy='150' r='30' fill='%23ec4899'/%3E%3Crect x='200' y='130' width='340' height='40' fill='%23ec4899' rx='4'/%3E%3Crect x='200' y='190' width='420' height='20' fill='%236b7280' rx='4'/%3E%3Ctext x='400' y='380' text-anchor='middle' font-family='system-ui' font-size='20' fill='%23374151'%3EFitness App%3C/text%3E%3C/svg%3E",
+      "technologies": [
+        "React Native",
+        "TypeScript",
+        "Redux",
+        "Firebase",
+        "HealthKit",
+        "Google Fit"
+      ],
+      "githubUrl": "https://github.com/evanmarshall/fitness-tracker",
+      "status": "planning",
+      "featured": false,
+      "category": "mobile-development",
+      "year": 2024,
+      "slug": "mobile-fitness-tracker"
+    },
+    {
+      "id": "6",
+      "title": "Code Deployment Tool",
+      "description": "CLI tool for automated deployment and CI/CD pipeline management",
+      "longDescription": "A command-line tool built with Node.js for automating deployment processes and managing CI/CD pipelines. Features include Docker integration, AWS deployment, environment management, and comprehensive logging. The tool demonstrates DevOps skills, CLI development, and automation best practices.",
+      "image": "data:image/svg+xml,%3Csvg width='800' height='500' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='800' height='500' fill='%23f8fafc'/%3E%3Crect x='50' y='50' width='700' height='400' fill='%23e2e8f0' rx='8'/%3E%3Ccircle cx='150' cy='150' r='30' fill='%23475569'/%3E%3Crect x='200' y='130' width='380' height='40' fill='%23475569' rx='4'/%3E%3Crect x='200' y='190' width='460' height='20' fill='%236b7280' rx='4'/%3E%3Ctext x='400' y='380' text-anchor='middle' font-family='system-ui' font-size='18' fill='%23374151'%3EDeployment Tool%3C/text%3E%3C/svg%3E",
+      "technologies": [
+        "Node.js",
+        "TypeScript",
+        "Docker",
+        "AWS",
+        "GitHub Actions",
+        "Commander.js"
+      ],
+      "githubUrl": "https://github.com/evanmarshall/deployment-tool",
+      "status": "completed",
+      "featured": false,
+      "category": "tool",
+      "year": 2023,
+      "slug": "code-deployment-tool"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+/* =============================================================================
+   Card Component Styles - Mobile-first CSS Modules
+   ============================================================================= */
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-all);
+
+  /* Mobile-first: smallest screens first */
+  @media (width >= 768px) {
+    border-radius: var(--radius-xl);
+  }
+}
+
+/* Hover variant */
+.hover {
+  &:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    border-color: var(--color-primary-200);
+
+    @media (width >= 1024px) {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+  }
+}
+
+/* Padding variants - mobile-first approach */
+/* No padding */
+.none {
+  padding: 0;
+}
+
+/* Small padding */
+.sm {
+  padding: var(--spacing-3);
+
+  @media (width >= 640px) {
+    padding: var(--spacing-4);
+  }
+}
+
+/* Medium padding (default) */
+.md {
+  padding: var(--spacing-4);
+
+  @media (width >= 640px) {
+    padding: var(--spacing-6);
+  }
+
+  @media (width >= 1024px) {
+    padding: var(--spacing-8);
+  }
+}
+
+/* Large padding */
+.lg {
+  padding: var(--spacing-6);
+
+  @media (width >= 640px) {
+    padding: var(--spacing-8);
+  }
+
+  @media (width >= 1024px) {
+    padding: var(--spacing-10);
+  }
+}

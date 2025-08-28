@@ -1,0 +1,185 @@
+/* =============================================================================
+   Button Component Styles - CSS Modules Example
+   =============================================================================
+
+   CSS Modules Learning Notes:
+   - Each CSS file is scoped to its component
+   - Class names are automatically made unique (e.g., .button becomes .Button_button__abc123)
+   - This prevents CSS conflicts and allows for true component-level styling
+   - We can still use CSS custom properties (design tokens) for consistency
+*/
+
+.button {
+  /* Base button styles using design tokens */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+
+  /* Mobile-first approach - start with smallest size */
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: var(--transition-all);
+  user-select: none;
+
+  /* Focus styles for accessibility */
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+
+  /* Larger screens - tablet and up */
+  @media (width >= 640px) {
+    padding: var(--spacing-3) var(--spacing-5);
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Variant styles */
+.primary {
+  background-color: var(--color-primary-600);
+  color: white;
+
+  &:hover:not(.disabled):not(.loading) {
+    background-color: var(--color-primary-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  &:active:not(.disabled):not(.loading) {
+    background-color: var(--color-primary-800);
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+
+  &:hover:not(.disabled):not(.loading) {
+    background-color: var(--color-hover);
+    border-color: var(--color-primary-300);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  &:active:not(.disabled):not(.loading) {
+    background-color: var(--color-active);
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+
+  &:hover:not(.disabled):not(.loading) {
+    background-color: var(--color-primary-50);
+    color: var(--color-primary-700);
+    border-color: var(--color-primary-700);
+  }
+
+  &:active:not(.disabled):not(.loading) {
+    background-color: var(--color-primary-100);
+  }
+
+  /* Dark theme adjustments */
+  [data-theme='dark'] & {
+    color: var(--color-primary-400);
+    border-color: var(--color-primary-400);
+
+    &:hover:not(.disabled):not(.loading) {
+      background-color: var(--color-primary-950);
+      color: var(--color-primary-300);
+      border-color: var(--color-primary-300);
+    }
+
+    &:active:not(.disabled):not(.loading) {
+      background-color: var(--color-primary-900);
+    }
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border-color: transparent;
+
+  &:hover:not(.disabled):not(.loading) {
+    background-color: var(--color-hover);
+    color: var(--color-text-primary);
+  }
+
+  &:active:not(.disabled):not(.loading) {
+    background-color: var(--color-active);
+  }
+}
+
+/* Size variants */
+.sm {
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--font-size-xs);
+
+  @media (width >= 640px) {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* .md uses default size - already defined in base .button */
+
+.lg {
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-base);
+
+  @media (width >= 640px) {
+    padding: var(--spacing-4) var(--spacing-8);
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* State styles */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+/* Loading spinner */
+.spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
