@@ -1,9 +1,19 @@
 /**
- * Home Page - Properly importing and rendering projects
+ * Home Page - Complete portfolio homepage with all sections
  */
 
 import React from 'react';
-import { Hero, ProjectCard } from '@/components';
+import {
+  Hero,
+  About,
+  Services,
+  TechStack,
+  ProjectCard,
+  ContactCTA,
+  Process,
+  Testimonials,
+  FAQ,
+} from '@/components';
 import type { Project } from '@/types';
 import { projects } from '@/data';
 import styles from '@/app/page.module.css';
@@ -17,6 +27,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+
+      <About />
+
+      <Services />
+
+      <TechStack />
 
       {/* Featured Projects Section */}
       <section className={styles.featuredProjects}>
@@ -38,6 +54,14 @@ export default function HomePage() {
           )}
         </div>
       </section>
+
+      <Process />
+
+      <Testimonials />
+
+      <FAQ />
+
+      <ContactCTA />
     </>
   );
 }

@@ -10,7 +10,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { motion, type Variants } from 'framer-motion';
 import { Button } from '@/components/ui';
 import styles from './Hero.module.css';

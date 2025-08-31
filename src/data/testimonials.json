@@ -1,0 +1,53 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Andrew White",
+      "role": "Business Owner",
+      "company": "Local Business",
+      "avatar": "/images/avatars/andrew-white.jpg",
+      "rating": 5,
+      "quote": "I was impressed with not only his talent in creating and developing wonderful ideas and content but the execution of those ideas was also outstanding. Very highly recommend.",
+      "project": "Logo Branding",
+      "tags": ["Branding", "Logo Design", "Creative Development"]
+    },
+    {
+      "id": 2,
+      "name": "Ian MacLean",
+      "role": "Business Owner",
+      "company": "Local Business",
+      "avatar": "/images/avatars/ian-maclean.jpg",
+      "rating": 5,
+      "quote": "Evan designed a wonderful online experience for my customers. He brought knowledge, experience and ideas that I appreciated.",
+      "project": "Website Design and Build",
+      "tags": ["Website Design", "User Experience", "Custom Development"]
+    },
+    {
+      "id": 3,
+      "name": "Dr. Joshua Gillis",
+      "role": "Healthcare Professional",
+      "company": "Medical Practice",
+      "avatar": "/images/avatars/joshua-gillis.jpg",
+      "rating": 5,
+      "quote": "Excellent developer, responsive, excellent technical ability and understanding of what the customer is looking for. Deadlines were always met. Has increased the interaction with my website and business.",
+      "project": "Website Design and Build",
+      "tags": ["Medical Website", "Professional Services", "Business Growth"]
+    },
+    {
+      "id": 4,
+      "name": "Stephanie Townsend",
+      "role": "Business Owner",
+      "company": "Multi-Industry Ventures",
+      "avatar": "/images/avatars/stephanie-townsend.jpg",
+      "rating": 5,
+      "quote": "We have had the pleasure of having Evan create multiple websites for us in a variety of industries over the past ten years. A web presence has become critical to the health and growth of a business, and we have seen the benefits of having the well-crafted designs he has created for us. Our websites have offered an increase in community awareness of our services, an increased customer base, and a platform for us to share information to our valued community. Evan comes with experience and professionalism in web design that is custom rather than template based, allowing the experience to be truly creative from the ground up. He is prompt in response, offering on-going maintenance services that support our sites monthly and allow us to know they are taken care of. He has earned our appreciation and trust when it comes to our web branding. We would highly recommend his web design services.",
+      "project": "Website Design and Build",
+      "tags": [
+        "Long-term Partnership",
+        "Multi-Industry",
+        "Custom Design",
+        "Ongoing Support"
+      ]
+    }
+  ]
+}

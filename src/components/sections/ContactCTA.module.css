@@ -1,0 +1,326 @@
+/* =============================================================================
+   ContactCTA Section Styles - Mobile-first Design
+   ============================================================================= */
+
+.contactCTA {
+  padding: var(--spacing-20) 0;
+  background-color: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+
+  /* Subtle background pattern */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 40%,
+      var(--color-primary-50) 50%,
+      transparent 60%
+    );
+    opacity: 0.3;
+    pointer-events: none;
+
+    [data-theme='dark'] & {
+      background: linear-gradient(
+        45deg,
+        transparent 40%,
+        var(--color-primary-950) 50%,
+        transparent 60%
+      );
+    }
+  }
+
+  @media (width >= 768px) {
+    padding: var(--spacing-32) 0;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+  position: relative;
+
+  @media (width >= 640px) {
+    padding: 0 var(--spacing-6);
+  }
+
+  @media (width >= 1024px) {
+    padding: 0 var(--spacing-8);
+  }
+}
+
+.content {
+  width: 100%;
+}
+
+.card {
+  padding: var(--spacing-8);
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-surface) 0%,
+    var(--color-primary-50) 100%
+  );
+  border: 1px solid var(--color-primary-200);
+  box-shadow: var(--shadow-xl);
+
+  [data-theme='dark'] & {
+    background: linear-gradient(
+      135deg,
+      var(--color-surface) 0%,
+      var(--color-primary-950) 100%
+    );
+    border-color: var(--color-primary-800);
+  }
+
+  @media (width >= 640px) {
+    padding: var(--spacing-12);
+  }
+
+  @media (width >= 768px) {
+    padding: var(--spacing-16);
+  }
+}
+
+/* Header */
+.header {
+  margin-bottom: var(--spacing-12);
+
+  @media (width >= 768px) {
+    margin-bottom: var(--spacing-16);
+  }
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-6);
+  line-height: var(--line-height-tight);
+
+  @media (width >= 640px) {
+    font-size: var(--font-size-4xl);
+  }
+
+  @media (width >= 768px) {
+    font-size: var(--font-size-5xl);
+  }
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+
+  @media (width >= 640px) {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* Contact Methods */
+.contactMethods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-12);
+
+  @media (width >= 640px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-6);
+  }
+
+  @media (width >= 768px) {
+    gap: var(--spacing-8);
+  }
+}
+
+.contactMethod {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4) var(--spacing-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: var(--transition-all);
+  box-shadow: var(--shadow-sm);
+
+  &:hover {
+    border-color: var(--color-primary-300);
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+
+  @media (width >= 640px) {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-6);
+    flex: 1;
+    gap: var(--spacing-3);
+  }
+}
+
+.methodIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+
+  @media (width >= 640px) {
+    font-size: 2rem;
+  }
+}
+
+.methodInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+
+  @media (width >= 640px) {
+    gap: var(--spacing-2);
+  }
+}
+
+.methodLabel {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+
+  @media (width >= 640px) {
+    font-size: var(--font-size-base);
+  }
+}
+
+.methodValue {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+
+  @media (width >= 640px) {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Availability Status */
+.availability {
+  margin-bottom: var(--spacing-12);
+  padding: var(--spacing-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  @media (width >= 768px) {
+    padding: var(--spacing-8);
+  }
+}
+
+.statusIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+}
+
+.statusDot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-accent-500);
+  border-radius: var(--radius-full);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.statusText {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+
+  @media (width >= 640px) {
+    font-size: var(--font-size-lg);
+  }
+}
+
+.responseTime {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+
+  @media (width >= 640px) {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Quick Info */
+.quickInfo {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-8);
+}
+
+.infoGrid {
+  display: grid;
+  gap: var(--spacing-6);
+  grid-template-columns: 1fr;
+
+  @media (width >= 640px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-8);
+  }
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  justify-content: center;
+
+  @media (width >= 640px) {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+}
+
+.infoIcon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+
+  @media (width >= 640px) {
+    font-size: 1.5rem;
+  }
+}
+
+.infoLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.infoValue {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+
+  @media (width >= 640px) {
+    font-size: var(--font-size-base);
+  }
+}

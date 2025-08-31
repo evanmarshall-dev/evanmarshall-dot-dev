@@ -51,6 +51,19 @@ export interface ServicePricing {
   unit: string;
 }
 
+// Testimonial-related types
+export interface Testimonial {
+  id: number;
+  name: string;
+  role: string;
+  company: string;
+  avatar: string;
+  rating: number;
+  quote: string;
+  project: string;
+  tags: string[];
+}
+
 // Contact form types
 export interface ContactFormData {
   name: string;

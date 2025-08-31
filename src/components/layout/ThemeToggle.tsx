@@ -12,14 +12,10 @@ import styles from './ThemeToggle.module.css';
 
 interface ThemeToggleProps {
   mobile?: boolean;
-  className?: string;
 }
 
-const ThemeToggle: React.FC<ThemeToggleProps> = ({
-  mobile = false,
-  className,
-}) => {
-  const { theme, setTheme, systemTheme, resolvedTheme } = useTheme();
+const ThemeToggle: React.FC<ThemeToggleProps> = ({ mobile = false }) => {
+  const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Avoid hydration mismatch

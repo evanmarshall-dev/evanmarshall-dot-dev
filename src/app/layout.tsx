@@ -9,8 +9,7 @@
 
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
-import { Navigation, Footer } from '@/components';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import { Navigation, Footer, BackToTop, ThemeProvider } from '@/components';
 import '@/styles/globals.css';
 
 // Load fonts with Next.js optimization
@@ -109,6 +108,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Navigation />
             <main id="main-content">{children}</main>
             <Footer />
+            <BackToTop />
           </div>
 
           {/* Google Analytics - placeholder */}

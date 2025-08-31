@@ -1,0 +1,99 @@
+/* =============================================================================
+   BackToTop Component Styles - Mobile-first Design
+   ============================================================================= */
+
+.backToTop {
+  position: fixed;
+  bottom: var(--spacing-6);
+  right: var(--spacing-6);
+  z-index: var(--z-index-sticky);
+
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: var(--radius-full);
+
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-500) 0%,
+    var(--color-accent-500) 100%
+  );
+
+  color: white;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-all);
+
+  /* Ensure good contrast and visibility */
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    box-shadow: var(--shadow-2xl);
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-primary-300);
+    outline-offset: 3px;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (width >= 768px) {
+    width: 64px;
+    height: 64px;
+    bottom: var(--spacing-8);
+    right: var(--spacing-8);
+  }
+}
+
+/* Icon */
+.icon {
+  width: 24px;
+  height: 24px;
+
+  @media (width >= 768px) {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .backToTop {
+  box-shadow:
+    var(--shadow-lg),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    box-shadow:
+      var(--shadow-2xl),
+      0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .backToTop {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .backToTop {
+    border: 2px solid var(--color-text-primary);
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+  }
+}
