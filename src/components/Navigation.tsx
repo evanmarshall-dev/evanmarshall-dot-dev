@@ -15,6 +15,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import type { NavigationItem } from '@/types';
+import ThemeToggle from './ThemeToggle';
 import styles from './Navigation.module.css';
 
 // Navigation items configuration
@@ -82,6 +83,7 @@ const Navigation: React.FC = () => {
                 </li>
               ))}
             </ul>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,6 +126,9 @@ const Navigation: React.FC = () => {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <ThemeToggle mobile />
+                </li>
               </ul>
             </motion.div>
           )}

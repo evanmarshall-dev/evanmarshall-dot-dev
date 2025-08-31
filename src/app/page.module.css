@@ -18,11 +18,11 @@
 
 /* Featured Projects Section */
 .featuredProjects {
-  padding: var(--spacing-20) 0;
+  padding: var(--spacing-20) 2rem;
   background-color: var(--color-background);
 
   @media (width >= 1024px) {
-    padding: var(--spacing-24) 0;
+    padding: var(--spacing-24) 2rem;
   }
 }
 

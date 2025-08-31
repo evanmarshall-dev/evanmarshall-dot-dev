@@ -1,0 +1,88 @@
+/* =============================================================================
+   Theme Toggle Component Styles - Mobile-first Design
+   ============================================================================= */
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-all);
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &:hover {
+    background: var(--color-hover);
+    border-color: var(--color-primary-300);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  @media (width >= 768px) {
+    padding: var(--spacing-2) var(--spacing-4);
+    gap: var(--spacing-2);
+  }
+}
+
+.icon {
+  font-size: var(--font-size-base);
+  line-height: 1;
+
+  @media (width >= 768px) {
+    font-size: var(--font-size-lg);
+  }
+}
+
+.label {
+  font-size: var(--font-size-xs);
+  text-transform: capitalize;
+
+  @media (width >= 768px) {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Mobile version for navigation */
+.mobileThemeToggle {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  padding: var(--spacing-4);
+  transition: var(--transition-all);
+  border-radius: var(--radius-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  text-align: left;
+
+  &:hover {
+    background-color: var(--color-hover);
+    color: var(--color-primary-600);
+  }
+}
+
+/* Dark theme specific adjustments */
+@media (prefers-color-scheme: dark) {
+  .themeToggle {
+    &:hover {
+      border-color: var(--color-primary-400);
+    }
+  }
+}

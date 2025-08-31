@@ -5,39 +5,26 @@
 import React from 'react';
 import { Hero, ProjectCard } from '@/components';
 import type { Project } from '@/types';
-import projectsData from '@/data/projects.json';
+import { projects } from '@/data';
+import styles from '@/app/page.module.css';
 
 export default function HomePage() {
   // Extract projects array and cast to proper type
-  const projects = projectsData.projects as Project[];
+  const allProjects = projects as Project[];
 
   // Get featured projects for the home page
-  const featuredProjects = projects.filter((project) => project.featured);
-
+  const featuredProjects = allProjects.filter((project) => project.featured);
   return (
     <>
       <Hero />
 
       {/* Featured Projects Section */}
-      <section style={{ padding: '4rem 2rem' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2
-            style={{
-              textAlign: 'center',
-              marginBottom: '3rem',
-              fontSize: '2.5rem',
-            }}
-          >
-            Featured Projects
-          </h2>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-              gap: '2rem',
-            }}
-          >
+      <section className={styles.featuredProjects}>
+        <div className={styles.container}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Featured Projects</h2>
+          </div>
+          <div className={styles.projectsGrid}>
             {featuredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} featured={true} />
             ))}

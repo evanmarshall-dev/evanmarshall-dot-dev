@@ -35,6 +35,7 @@
   padding: var(--spacing-4) var(--spacing-4);
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 64px;
 
   /* Larger screens */
   @media (width >= 640px) {
@@ -43,6 +44,10 @@
 
   @media (width >= 1024px) {
     padding: var(--spacing-6) var(--spacing-8);
+  }
+
+  @media (width >= 1200px) {
+    max-width: 1400px;
   }
 }
 
@@ -77,21 +82,27 @@
 /* Desktop Navigation - Hidden on mobile */
 .desktopNav {
   display: none;
+  align-items: center;
+  gap: var(--spacing-4);
 
   @media (width >= 768px) {
-    display: block;
+    display: flex;
   }
 }
 
 .navList {
   display: flex;
   align-items: center;
-  gap: var(--spacing-6);
+  gap: var(--spacing-4);
   list-style: none;
   margin: 0;
   padding: 0;
 
   @media (width >= 1024px) {
+    gap: var(--spacing-6);
+  }
+
+  @media (width >= 1200px) {
     gap: var(--spacing-8);
   }
 }

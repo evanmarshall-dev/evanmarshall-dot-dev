@@ -10,6 +10,7 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import { Navigation, Footer } from '@/components';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import '@/styles/globals.css';
 
 // Load fonts with Next.js optimization
@@ -91,24 +92,30 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body>
-        {/* Skip link for accessibility */}
-        <a href="#main-content" className="sr-only">
-          Skip to main content
-        </a>
+    <html
+      lang="en"
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body suppressHydrationWarning>
+        <ThemeProvider>
+          {/* Skip link for accessibility */}
+          <a href="#main-content" className="sr-only">
+            Skip to main content
+          </a>
 
-        {/* Main app structure */}
-        <div id="root">
-          <Navigation />
-          <main id="main-content">{children}</main>
-          <Footer />
-        </div>
+          {/* Main app structure */}
+          <div id="root">
+            <Navigation />
+            <main id="main-content">{children}</main>
+            <Footer />
+          </div>
 
-        {/* Google Analytics - placeholder */}
-        {process.env.NODE_ENV === 'production' && (
-          <>{/* Add Google Analytics scripts here */}</>
-        )}
+          {/* Google Analytics - placeholder */}
+          {process.env.NODE_ENV === 'production' && (
+            <>{/* Add Google Analytics scripts here */}</>
+          )}
+        </ThemeProvider>
       </body>
     </html>
   );
