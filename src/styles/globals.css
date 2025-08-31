@@ -3,54 +3,60 @@
    ============================================================================= */
 
 :root {
-  /* Colors - Professional Developer Palette */
-  --color-primary-50: #f0f9ff;
-  --color-primary-100: #e0f2fe;
-  --color-primary-200: #bae6fd;
-  --color-primary-300: #7dd3fc;
-  --color-primary-400: #38bdf8;
-  --color-primary-500: #0ea5e9;
-  --color-primary-600: #0284c7;
-  --color-primary-700: #0369a1;
-  --color-primary-800: #075985;
-  --color-primary-900: #0c4a6e;
-  --color-primary-950: #082f49;
+  /* Colors - Custom OKLCH-based Professional Palette */
 
-  --color-secondary-50: #fafafa;
-  --color-secondary-100: #f4f4f5;
-  --color-secondary-200: #e4e4e7;
-  --color-secondary-300: #d4d4d8;
-  --color-secondary-400: #a1a1aa;
-  --color-secondary-500: #71717a;
-  --color-secondary-600: #52525b;
-  --color-secondary-700: #3f3f46;
-  --color-secondary-800: #27272a;
-  --color-secondary-900: #18181b;
-  --color-secondary-950: #09090b;
+  /* Accent Colors - Based on oklch(.68 .2117 30.54) - Vibrant Orange-Red */
+  --color-accent-50: oklch(0.97 0.015 30.54);
+  --color-accent-100: oklch(0.94 0.025 30.54);
+  --color-accent-200: oklch(0.88 0.05 30.54);
+  --color-accent-300: oklch(0.82 0.085 30.54);
+  --color-accent-400: oklch(0.75 0.15 30.54);
+  --color-accent-500: oklch(0.68 0.2117 30.54); /* Base color */
+  --color-accent-600: oklch(0.61 0.19 30.54);
+  --color-accent-700: oklch(0.54 0.165 30.54);
+  --color-accent-800: oklch(0.47 0.14 30.54);
+  --color-accent-900: oklch(0.4 0.115 30.54);
+  --color-accent-950: oklch(0.25 0.07 30.54);
 
-  --color-accent-50: #f0fdf4;
-  --color-accent-100: #dcfce7;
-  --color-accent-200: #bbf7d0;
-  --color-accent-300: #86efac;
-  --color-accent-400: #4ade80;
-  --color-accent-500: #22c55e;
-  --color-accent-600: #16a34a;
-  --color-accent-700: #15803d;
-  --color-accent-800: #166534;
-  --color-accent-900: #14532d;
-  --color-accent-950: #052e16;
+  /* Secondary Colors - Based on oklch(.2 .034 265.48) - Dark Blue-Purple */
+  --color-secondary-50: oklch(0.98 0.008 265.48);
+  --color-secondary-100: oklch(0.95 0.012 265.48);
+  --color-secondary-200: oklch(0.9 0.018 265.48);
+  --color-secondary-300: oklch(0.82 0.022 265.48);
+  --color-secondary-400: oklch(0.7 0.026 265.48);
+  --color-secondary-500: oklch(0.58 0.028 265.48);
+  --color-secondary-600: oklch(0.46 0.03 265.48);
+  --color-secondary-700: oklch(0.38 0.032 265.48);
+  --color-secondary-800: oklch(0.3 0.033 265.48);
+  --color-secondary-900: oklch(0.2 0.034 265.48); /* Base color */
+  --color-secondary-950: oklch(0.15 0.03 265.48);
 
-  --color-warning-50: #fffbeb;
-  --color-warning-100: #fef3c7;
-  --color-warning-500: #f59e0b;
-  --color-warning-700: #b45309;
-  --color-warning-900: #78350f;
+  /* Primary Colors - Based on oklch(.69 .0476 79.1) - Warm Yellow-Orange */
+  --color-primary-50: oklch(0.98 0.01 79.1);
+  --color-primary-100: oklch(0.95 0.015 79.1);
+  --color-primary-200: oklch(0.9 0.022 79.1);
+  --color-primary-300: oklch(0.84 0.032 79.1);
+  --color-primary-400: oklch(0.78 0.042 79.1);
+  --color-primary-500: oklch(0.69 0.0476 79.1); /* Base color */
+  --color-primary-600: oklch(0.62 0.045 79.1);
+  --color-primary-700: oklch(0.55 0.04 79.1);
+  --color-primary-800: oklch(0.48 0.035 79.1);
+  --color-primary-900: oklch(0.41 0.03 79.1);
+  --color-primary-950: oklch(0.25 0.02 79.1);
 
-  --color-error-50: #fef2f2;
-  --color-error-100: #fee2e2;
-  --color-error-500: #ef4444;
-  --color-error-700: #b91c1c;
-  --color-error-900: #7f1d1d;
+  /* Warning Colors - Complementary warm orange */
+  --color-warning-50: oklch(0.98 0.01 50);
+  --color-warning-100: oklch(0.94 0.025 50);
+  --color-warning-500: oklch(0.72 0.15 50);
+  --color-warning-700: oklch(0.58 0.13 50);
+  --color-warning-900: oklch(0.42 0.1 50);
+
+  /* Error Colors - Complementary red */
+  --color-error-50: oklch(0.98 0.01 15);
+  --color-error-100: oklch(0.94 0.02 15);
+  --color-error-500: oklch(0.68 0.18 15);
+  --color-error-700: oklch(0.55 0.16 15);
+  --color-error-900: oklch(0.42 0.13 15);
 
   /* Typography */
   --font-family-primary:
