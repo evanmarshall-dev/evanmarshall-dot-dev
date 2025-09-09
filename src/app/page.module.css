@@ -16,10 +16,34 @@
   }
 }
 
+/* Quick Intro (value summary) */
+.quickIntro {
+  padding: var(--spacing-16) 0;
+  background-color: var(--color-surface);
+
+  @media (width >= 1024px) {
+    padding: var(--spacing-20) 0;
+  }
+}
+
+.valueList {
+  margin: 0 0 var(--spacing-10);
+  padding-inline-start: 1.25rem;
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.valueList li {
+  margin-block: var(--spacing-2);
+}
+
 /* Featured Projects Section */
 .featuredProjects {
   padding: var(--spacing-20) 2rem;
   background-color: var(--color-background);
+
+  /* Featured Projects Section */
+  /* This comment describes the section */
 
   @media (width >= 1024px) {
     padding: var(--spacing-24) 2rem;
@@ -90,6 +114,10 @@
   text-align: center;
 }
 
+.sectionActions :where(a, button) {
+  margin-inline: 0.25rem;
+}
+
 /* CTA Section */
 .cta {
   padding: var(--spacing-20) 0;
@@ -157,6 +185,89 @@
     justify-content: center;
     gap: var(--spacing-6);
   }
+}
+
+/* Services Summary */
+.servicesSummary {
+  padding: var(--spacing-16) 0;
+  background-color: var(--color-background);
+
+  @media (width >= 1024px) {
+    padding: var(--spacing-20) 0;
+  }
+}
+
+.servicesList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-2);
+  margin: 0 0 var(--spacing-8);
+  padding: 0;
+  list-style: none;
+
+  @media (width >= 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (width >= 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.servicesList li {
+  color: var(--color-text-secondary);
+}
+
+/* Mini Testimonial */
+.miniTestimonial {
+  padding: var(--spacing-16) 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--color-primary-100) 20%, transparent) 0%,
+    transparent 100%
+  );
+
+  [data-theme='dark'] & {
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--color-primary-900) 30%, transparent) 0%,
+      transparent 100%
+    );
+  }
+}
+
+.miniTestimonialCard {
+  margin: 0 auto;
+  max-width: 720px;
+  padding: var(--spacing-8);
+  border-radius: 16px;
+  background: var(--color-surface);
+  box-shadow:
+    0 1px 3px hsl(0 0% 0% / 0.05),
+    0 10px 25px hsl(0 0% 0% / 0.08);
+}
+
+.miniQuote {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-6);
+}
+
+.miniAttribution {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--color-text-secondary);
+}
+
+.miniName {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.miniMeta {
+  font-size: var(--font-size-sm);
 }
 
 .main {

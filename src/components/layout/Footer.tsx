@@ -25,22 +25,17 @@ const footerNavigation: readonly NavigationItem[] = [
 const socialLinks: readonly SocialLink[] = [
   {
     platform: 'GitHub',
-    url: 'https://github.com/evanmarshall',
+    url: 'https://github.com/evanmarshall-dev',
     icon: 'github',
   },
   {
     platform: 'LinkedIn',
-    url: 'https://linkedin.com/in/evanmarshall',
+    url: 'https://www.linkedin.com/in/evan-marshall-dev/',
     icon: 'linkedin',
   },
   {
-    platform: 'Twitter',
-    url: 'https://twitter.com/evanmarshall',
-    icon: 'twitter',
-  },
-  {
     platform: 'Email',
-    url: 'mailto:hello@evanmarshall.dev',
+    url: 'mailto:me@evanmarshall.dev',
     icon: 'email',
   },
 ] as const;
@@ -132,7 +127,6 @@ const SocialIcon: React.FC<SocialIconProps> = ({ icon }) => {
   const iconMap: Record<string, string> = {
     github: '⚡',
     linkedin: '💼',
-    twitter: '🐦',
     email: '📧',
   };
 

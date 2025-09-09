@@ -122,22 +122,7 @@ const stepVariants = {
   },
 };
 
-const iconVariants = {
-  hidden: {
-    scale: 0,
-    rotate: -180,
-  },
-  visible: {
-    scale: 1,
-    rotate: 0,
-    transition: {
-      type: 'spring' as const,
-      stiffness: 200,
-      damping: 15,
-      delay: 0.3,
-    },
-  },
-};
+// Removed icon-specific animation variants after simplifying visuals
 
 export default function Process() {
   return (
@@ -168,31 +153,24 @@ export default function Process() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {processSteps.map((step, index) => (
+          {processSteps.map((step) => (
             <motion.div
               key={step.id}
+              id={`step-${step.id}`}
               className={styles.stepContainer}
               variants={stepVariants}
             >
-              {/* Timeline Line */}
-              {index !== processSteps.length - 1 && (
-                <div className={styles.timelineLine} />
-              )}
-
               {/* Step Card */}
               <Card className={`${styles.stepCard} ${styles[step.color]}`}>
                 {/* Step Number and Icon */}
                 <div className={styles.stepHeader}>
-                  <motion.div
-                    className={styles.stepIcon}
-                    variants={iconVariants}
-                    aria-hidden="true"
-                  >
-                    <span className={styles.emoji}>{step.icon}</span>
-                    <span className={styles.stepNumber}>{step.id}</span>
-                  </motion.div>
                   <div className={styles.stepInfo}>
-                    <h3 className={styles.stepTitle}>{step.title}</h3>
+                    <h3
+                      className={styles.stepTitle}
+                      id={`step-${step.id}-title`}
+                    >
+                      {step.title}
+                    </h3>
                     <p className={styles.stepDuration}>{step.duration}</p>
                   </div>
                 </div>
