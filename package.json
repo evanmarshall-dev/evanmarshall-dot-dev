@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "type-check": "tsc --noEmit",
-    "lh:ci": "lighthouse-ci autorun",
+    "lh:ci": "lhci autorun",
     "prepare": "husky"
   },
   "dependencies": {
