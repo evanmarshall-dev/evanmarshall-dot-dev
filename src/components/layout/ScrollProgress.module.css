@@ -1,0 +1,76 @@
+/* Scroll Progress Bar - visible under sticky nav */
+
+.root {
+  position: fixed;
+  top: var(--nav-height, 64px);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1010; /* below header (1020), above content */
+  pointer-events: none;
+}
+
+.track {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, var(--color-border) 45%, transparent);
+}
+
+.bar {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 0%;
+  background: linear-gradient(90deg, var(--hud-neon-1), var(--hud-neon-2));
+  box-shadow: var(--glow-inner), var(--glow-outer);
+  transition: width var(--transition-base);
+}
+
+[data-motion='reduced'] .bar,
+[data-motion='off'] .bar {
+  transition: none;
+}
+
+[data-theme='high-contrast'] .bar {
+  background: #fff;
+  box-shadow: none;
+}
+/* Scroll Progress Bar - minimal, preference-aware */
+
+.root {
+  position: fixed;
+  top: var(--nav-height, 64px);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1010; /* below header (1020), above content */
+  pointer-events: none;
+}
+
+.track {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, var(--color-border) 35%, transparent);
+}
+
+.bar {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 0%;
+  background: linear-gradient(90deg, var(--hud-neon-1), var(--hud-neon-2));
+  box-shadow: var(--glow-inner), var(--glow-outer);
+  transition: width var(--transition-base);
+
+  /* High contrast: flat, strong */
+  [data-theme='high-contrast'] & {
+    background: #fff;
+    box-shadow: none;
+  }
+}
+
+/* Reduced/No motion: disable transitions */
+[data-motion='reduced'] .bar,
+[data-motion='off'] .bar {
+  transition: none;
+}

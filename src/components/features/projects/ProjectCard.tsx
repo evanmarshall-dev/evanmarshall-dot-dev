@@ -22,12 +22,14 @@ interface ProjectCardProps {
   project: Project;
   featured?: boolean;
   className?: string;
+  priority?: boolean;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
   featured = false,
   className,
+  priority,
 }) => {
   const cardClasses = clsx(
     styles.projectCard,
@@ -49,9 +51,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <Image
             src={project.image}
             alt={project.title}
-            width={400}
-            height={250}
+            width={800}
+            height={500}
             className={styles.image}
+            sizes="(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={Boolean(priority || featured)}
+            decoding="async"
+            loading={featured ? 'eager' : 'lazy'}
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
           />

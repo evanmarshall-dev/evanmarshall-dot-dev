@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Testimonials',
   description:
     'Client testimonials and success stories demonstrating results and reliability.',
+  alternates: { canonical: '/testimonials' },
 };
 
 export default function TestimonialsPage() {

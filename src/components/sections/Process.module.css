@@ -44,22 +44,7 @@
 
 .title {
   font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-4);
-  line-height: var(--line-height-tight);
-
-  @media (width >= 640px) {
-    font-size: var(--font-size-4xl);
-  }
-
-  @media (width >= 768px) {
-    font-size: var(--font-size-5xl);
-  }
-}
-
-.subtitle {
-  font-size: var(--font-size-lg);
+  /* Button styles rely on shared UI Button component */
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   max-width: 600px;

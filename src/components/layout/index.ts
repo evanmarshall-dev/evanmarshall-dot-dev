@@ -8,4 +8,5 @@ export { default as Navigation } from './Navigation';
 export { default as Footer } from './Footer';
 export { default as BackToTop } from './BackToTop';
 export { default as ThemeProvider } from './ThemeProvider';
-export { default as ThemeToggle } from './ThemeToggle';
+export { default as PreferencesPanel } from './PreferencesPanel';
+export { default as ScrollProgress } from './ScrollProgress';

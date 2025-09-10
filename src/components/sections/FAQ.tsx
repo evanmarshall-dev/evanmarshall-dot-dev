@@ -10,7 +10,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Card } from '../ui';
+import { Card, Button } from '../ui';
 import styles from './FAQ.module.css';
 
 interface FAQItem {
@@ -272,15 +272,9 @@ export default function FAQ() {
             I&apos;m here to help. Reach out for a free consultation to discuss
             your project and get personalized answers.
           </p>
-          <motion.a
-            href="#contact"
-            className={styles.ctaButton}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          >
+          <Button href="/contact" variant="primary" size="lg">
             Get in Touch
-          </motion.a>
+          </Button>
         </motion.div>
       </div>
     </section>

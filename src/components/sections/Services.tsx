@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Card } from '@/components/ui';
+import { Card, Button } from '@/components/ui';
 import { services } from '@/data';
 import type { Service } from '@/types';
 import styles from './Services.module.css';
@@ -92,7 +92,8 @@ const ServiceIcon: React.FC<{ icon: string }> = ({ icon }) => {
   };
 
   return (
-    <div className={styles.icon}>
+    <div className={styles.icon} aria-hidden="true">
+      {/* Decorative icons only; announced text is the service title */}
       {iconMap[icon as keyof typeof iconMap] || iconMap.code}
     </div>
   );
@@ -198,9 +199,9 @@ const Services: React.FC = () => {
             Ready to discuss your project? Let&apos;s explore how we can work
             together.
           </p>
-          <a href="#contact" className={styles.ctaButton}>
+          <Button href="/contact" variant="primary" size="lg">
             Get in Touch
-          </a>
+          </Button>
         </motion.div>
       </div>
     </section>

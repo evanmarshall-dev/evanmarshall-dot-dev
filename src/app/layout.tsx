@@ -9,7 +9,14 @@
 
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
-import { Navigation, Footer, BackToTop, ThemeProvider } from '@/components';
+import {
+  Navigation,
+  Footer,
+  BackToTop,
+  ThemeProvider,
+  PreferencesPanel,
+  ScrollProgress,
+} from '@/components';
 import '@/styles/globals.css';
 
 // Load fonts with Next.js optimization
@@ -26,6 +33,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.evanmarshall.dev'),
   title: {
     template: '%s | Evan Marshall - Full-Stack Developer',
     default: 'Evan Marshall - Full-Stack Developer',
@@ -69,6 +77,9 @@ export const metadata: Metadata = {
     creator: '@evanmarshall',
     images: ['/images/og-image.jpg'],
   },
+  alternates: {
+    canonical: '/',
+  },
   robots: {
     index: true,
     follow: true,
@@ -106,15 +117,49 @@ export default function RootLayout({ children }: RootLayoutProps) {
           {/* Main app structure */}
           <div id="root">
             <Navigation />
+            <ScrollProgress />
             <main id="main-content">{children}</main>
             <Footer />
             <BackToTop />
+            <PreferencesPanel />
           </div>
 
-          {/* Google Analytics - placeholder */}
-          {process.env.NODE_ENV === 'production' && (
-            <>{/* Add Google Analytics scripts here */}</>
-          )}
+          {/* Structured Data: Person & Organization */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Person',
+                name: 'Evan Marshall',
+                url: 'https://www.evanmarshall.dev',
+                image: 'https://www.evanmarshall.dev/images/profile.png',
+                jobTitle: 'Full-Stack Developer',
+                sameAs: [
+                  'https://github.com/evanmarshall',
+                  'https://www.linkedin.com/in/evan-marshall-dev',
+                ],
+                worksFor: {
+                  '@type': 'Organization',
+                  name: 'Evan Marshall Studio',
+                  url: 'https://www.evanmarshall.dev',
+                },
+              }),
+            }}
+          />
+          {/* Optional: Organization JSON-LD */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                name: 'Evan Marshall',
+                url: 'https://www.evanmarshall.dev',
+                logo: 'https://www.evanmarshall.dev/images/og-image.jpg',
+              }),
+            }}
+          />
         </ThemeProvider>
       </body>
     </html>

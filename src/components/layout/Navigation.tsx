@@ -15,7 +15,6 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import type { NavigationItem } from '@/types';
-import ThemeToggle from './ThemeToggle';
 import styles from './Navigation.module.css';
 
 // Navigation items configuration
@@ -34,6 +33,7 @@ const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const pathname = usePathname();
+  const [navHeight, setNavHeight] = useState<number>(64);
 
   // Handle scroll effect for navigation background
   useEffect(() => {
@@ -61,8 +61,26 @@ const Navigation: React.FC = () => {
     return pathname.startsWith(href);
   };
 
+  // Update CSS var for nav height after mount
+  useEffect(() => {
+    const el = document.querySelector(
+      `.${styles.container}`
+    ) as HTMLElement | null;
+    if (el) {
+      const h = el.getBoundingClientRect().height || 64;
+      setNavHeight(h);
+      document.documentElement.style.setProperty('--nav-height', `${h}px`);
+    }
+  }, []);
+
+  const headerStyle = {
+    ['--nav-height']: `${navHeight}px`,
+  } as React.CSSProperties;
   return (
-    <header className={clsx(styles.header, { [styles.scrolled]: isScrolled })}>
+    <header
+      className={clsx(styles.header, { [styles.scrolled]: isScrolled })}
+      style={headerStyle}
+    >
       <nav className={styles.nav} aria-label="Main navigation">
         <div className={styles.container}>
           {/* Logo */}
@@ -80,13 +98,15 @@ const Navigation: React.FC = () => {
                     className={clsx(styles.navLink, {
                       [styles.active]: isActiveLink(item.href),
                     })}
+                    prefetch={['/projects', '/services', '/contact'].includes(
+                      item.href
+                    )}
                   >
                     {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
-            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,14 +144,14 @@ const Navigation: React.FC = () => {
                       className={clsx(styles.mobileNavLink, {
                         [styles.active]: isActiveLink(item.href),
                       })}
+                      prefetch={['/projects', '/services', '/contact'].includes(
+                        item.href
+                      )}
                     >
                       {item.label}
                     </Link>
                   </li>
                 ))}
-                <li>
-                  <ThemeToggle mobile />
-                </li>
               </ul>
             </motion.div>
           )}

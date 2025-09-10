@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Services',
   description:
     'Web development services: websites, web apps, e‑commerce, integrations, performance, SEO, and accessibility.',
+  alternates: { canonical: '/services' },
 };
 
 export default function ServicesPage() {

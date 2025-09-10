@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Process',
   description:
     'A simple, collaborative development process that delivers clear outcomes on time and on budget.',
+  alternates: { canonical: '/process' },
 };
 
 export default function ProcessPage() {

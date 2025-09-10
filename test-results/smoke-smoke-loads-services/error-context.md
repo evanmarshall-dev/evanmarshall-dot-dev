@@ -1,0 +1,74 @@
+# Page snapshot
+
+```yaml
+- generic:
+    - generic [active]:
+        - generic [ref=e3]:
+            - generic [ref=e4]:
+                - generic [ref=e5]:
+                    - navigation [ref=e6]:
+                        - button "previous" [disabled] [ref=e7]:
+                            - img "previous" [ref=e8]
+                        - generic [ref=e10]:
+                            - generic [ref=e11]: 1/
+                            - generic [ref=e12]: '1'
+                        - button "next" [disabled] [ref=e13]:
+                            - img "next" [ref=e14]
+                    - img
+                - generic [ref=e16]:
+                    - generic [ref=e17]:
+                        - img [ref=e18]
+                        - generic "Latest available version is detected (15.5.2)." [ref=e20]: Next.js 15.5.2
+                        - generic [ref=e21]: Turbopack
+                    - img
+            - generic [ref=e22]:
+                - dialog "Runtime Error" [ref=e23]:
+                    - generic [ref=e26]:
+                        - generic [ref=e27]:
+                            - generic [ref=e28]:
+                                - generic [ref=e30]: Runtime Error
+                                - generic [ref=e31]:
+                                    - button "Copy Error Info" [ref=e32] [cursor=pointer]:
+                                        - img [ref=e33] [cursor=pointer]
+                                    - button "No related documentation found" [disabled] [ref=e35]:
+                                        - img [ref=e36]
+                                    - link "Learn more about enabling Node.js inspector for server code with Chrome DevTools" [ref=e38] [cursor=pointer]:
+                                        - /url: https://nextjs.org/docs/app/building-your-application/configuring/debugging#server-side-code
+                                        - img [ref=e39] [cursor=pointer]
+                            - paragraph [ref=e48]: Failed to load chunk server/chunks/ssr/3819f_next_dist_c14cf83d._.js from runtime for chunk server/app/services/page.js
+                        - generic [ref=e50]:
+                            - generic [ref=e51]:
+                                - paragraph [ref=e52]:
+                                    - text: Call Stack
+                                    - generic [ref=e53]: '29'
+                                - button "Show 28 ignore-listed frame(s)" [ref=e54] [cursor=pointer]:
+                                    - text: Show 28 ignore-listed frame(s)
+                                    - img [ref=e55] [cursor=pointer]
+                            - generic [ref=e57]:
+                                - generic [ref=e58]: Object.<anonymous>
+                                - generic [ref=e59]: .next/server/app/services/page.js (4:3)
+                    - generic [ref=e60]:
+                        - generic [ref=e61]: '1'
+                        - generic [ref=e62]: '2'
+                - contentinfo [ref=e63]:
+                    - region "Error feedback" [ref=e64]:
+                        - paragraph [ref=e65]:
+                            - link "Was this helpful?" [ref=e66] [cursor=pointer]:
+                                - /url: https://nextjs.org/telemetry#error-feedback
+                        - button "Mark as helpful" [ref=e67] [cursor=pointer]:
+                            - img [ref=e68] [cursor=pointer]
+                        - button "Mark as not helpful" [ref=e71] [cursor=pointer]:
+                            - img [ref=e72] [cursor=pointer]
+        - generic [ref=e78] [cursor=pointer]:
+            - button "Open Next.js Dev Tools" [ref=e79] [cursor=pointer]:
+                - img [ref=e80] [cursor=pointer]
+            - generic [ref=e83] [cursor=pointer]:
+                - button "Open issues overlay" [ref=e84] [cursor=pointer]:
+                    - generic [ref=e85] [cursor=pointer]:
+                        - generic [ref=e86] [cursor=pointer]: '0'
+                        - generic [ref=e87] [cursor=pointer]: '1'
+                    - generic [ref=e88] [cursor=pointer]: Issue
+                - button "Collapse issues badge" [ref=e89] [cursor=pointer]:
+                    - img [ref=e90] [cursor=pointer]
+    - alert [ref=e92]
+```

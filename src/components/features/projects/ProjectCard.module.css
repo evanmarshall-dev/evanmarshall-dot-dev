@@ -209,6 +209,7 @@
 .viewMore {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   padding: var(--spacing-2) 0;
   color: var(--color-primary-600);
   text-decoration: none;
@@ -219,6 +220,7 @@
   &:hover {
     color: var(--color-primary-700);
     text-decoration: underline;
+    transform: translateY(-1px);
   }
 
   &:focus-visible {
@@ -232,6 +234,7 @@
 .githubLink {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   padding: var(--spacing-2) 0;
   color: var(--color-text-secondary);
   text-decoration: none;
@@ -242,6 +245,7 @@
   &:hover {
     color: var(--color-text-primary);
     text-decoration: underline;
+    transform: translateY(-1px);
   }
 
   &:focus-visible {

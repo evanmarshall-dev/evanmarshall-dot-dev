@@ -8,7 +8,7 @@
  */
 
 import { motion } from 'framer-motion';
-import { Card } from '../ui';
+import { Card, Button } from '../ui';
 import { testimonials } from '@/data';
 import styles from './Testimonials.module.css';
 
@@ -160,15 +160,9 @@ export default function Testimonials() {
             Let&apos;s discuss how I can help bring your project to life and
             deliver the same exceptional results.
           </p>
-          <motion.a
-            href="#contact"
-            className={styles.ctaButton}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          >
+          <Button href="/contact" variant="primary" size="lg">
             Start Your Success Story
-          </motion.a>
+          </Button>
         </motion.div>
       </div>
     </section>

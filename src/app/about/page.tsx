@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     'Learn about Evan Marshall, a full‑stack developer focused on building fast, reliable, and accessible web experiences.',
+  alternates: { canonical: '/about' },
 };
 
 export default function AboutPage() {

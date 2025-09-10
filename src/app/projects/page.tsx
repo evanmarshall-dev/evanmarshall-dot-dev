@@ -7,8 +7,9 @@
  */
 
 import React from 'react';
-import type { Metadata } from 'next/dist/lib/metadata/types/metadata-interface';
+import type { Metadata } from 'next';
 import { ProjectCard } from '@/components';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import type { Project } from '@/types';
 import projectsData from '@/data/projects.json';
 import styles from './page.module.css';
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   title: 'Projects',
   description:
     'Explore my portfolio of web development projects, including full-stack applications, APIs, and modern web solutions.',
+  alternates: { canonical: '/projects' },
 };
 
 export default function ProjectsPage() {
@@ -24,10 +26,14 @@ export default function ProjectsPage() {
 
   return (
     <div className={styles.page}>
+      <h1 className="sr-only">Projects</h1>
+      <Breadcrumbs
+        items={[{ label: 'Home', href: '/' }, { label: 'Projects' }]}
+      />
       <div className={styles.container}>
         {/* Page Header */}
         <header className={styles.header}>
-          <h1 className={styles.title}>My Projects</h1>
+          <h2 className={styles.title}>My Projects</h2>
           <p className={styles.description}>
             A collection of my work showcasing modern web development practices,
             from full-stack applications to specialized tools and libraries.

@@ -9,7 +9,7 @@
  */
 
 import { motion } from 'framer-motion';
-import { Card } from '../ui';
+import { Card, Button } from '../ui';
 import styles from './Process.module.css';
 
 interface ProcessStep {
@@ -204,15 +204,9 @@ export default function Process() {
             Let&apos;s discuss your project and how my proven process can bring
             your vision to life.
           </p>
-          <motion.a
-            href="#contact"
-            className={styles.ctaButton}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          >
+          <Button href="/contact" variant="primary" size="lg">
             Start Your Project
-          </motion.a>
+          </Button>
         </motion.div>
       </div>
     </section>

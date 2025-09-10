@@ -86,6 +86,19 @@
   display: flex;
   flex-direction: column;
   padding: var(--spacing-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  transition: var(--transition-all);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
 
   @media (width >= 640px) {
     padding: var(--spacing-8);
@@ -155,6 +168,17 @@
   gap: var(--spacing-3);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
+  padding: var(--spacing-2);
+  border-radius: var(--radius-md);
+
+  &:hover {
+    background-color: var(--color-hover);
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
 }
 
 .checkmark {
@@ -230,34 +254,11 @@
   }
 }
 
-.ctaButton {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--spacing-4) var(--spacing-8);
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-500) 0%,
-    var(--color-accent-500) 100%
-  );
-  color: white;
-  text-decoration: none;
-  border-radius: var(--radius-lg);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-lg);
-  transition: var(--transition-all);
-  box-shadow: var(--shadow-md);
+/* Button styles centralized in ui/Button; Services uses <Button> for consistency */
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--color-primary-500);
-    outline-offset: 2px;
-  }
-
-  @media (width >= 640px) {
-    padding: var(--spacing-5) var(--spacing-10);
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .serviceCard {
+    transition: none;
   }
 }

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'FAQ',
   description:
     'Answers to common questions about services, timelines, costs, and collaboration.',
+  alternates: { canonical: '/faq' },
 };
 
 export default function FAQPage() {

@@ -16,6 +16,19 @@
   }
 }
 
+/* Sticky section scaffolding for scroll-as-navigation prep */
+.section {
+  position: relative;
+  padding-block: var(--spacing-16);
+}
+
+.sectionDivider {
+  height: 1px;
+  background: color-mix(in oklab, var(--color-border) 50%, transparent);
+  margin: var(--spacing-12) auto;
+  max-width: 1200px;
+}
+
 /* Quick Intro (value summary) */
 .quickIntro {
   padding: var(--spacing-16) 0;
@@ -61,6 +74,9 @@
     margin-bottom: var(--spacing-20);
   }
 }
+
+/* Sticky section header (prep for scroll-as-navigation) */
+/* Previously sticky section headers for experimental nav removed to simplify UX */
 
 .sectionTitle {
   font-size: var(--font-size-3xl);

@@ -35,7 +35,11 @@ export default function HomePage() {
       />
 
       {/* Quick value summary with primary CTAs */}
-      <section className={styles.quickIntro} aria-labelledby="summary-title">
+      <section
+        id="summary"
+        className={`${styles.section} ${styles.quickIntro}`}
+        aria-labelledby="summary-title"
+      >
         <div className={styles.container}>
           <h2 id="summary-title" className={styles.sectionTitle}>
             What I deliver
@@ -46,10 +50,20 @@ export default function HomePage() {
             <li>Clear communication and dependable ongoing support</li>
           </ul>
           <div className={styles.sectionActions}>
-            <Button href="/projects" variant="primary" size="lg">
+            <Button
+              href="/projects"
+              variant="primary"
+              size="lg"
+              aria-label="Browse featured projects"
+            >
               See results
             </Button>
-            <Button href="#contact" variant="outline" size="lg">
+            <Button
+              href="#contact"
+              variant="outline"
+              size="lg"
+              aria-label="Request a quote"
+            >
               Get a quote
             </Button>
           </div>
@@ -57,14 +71,26 @@ export default function HomePage() {
       </section>
 
       {/* Featured Projects Section */}
-      <section className={styles.featuredProjects}>
+      <div className={styles.sectionDivider} aria-hidden="true" />
+      <section
+        id="featured"
+        className={`${styles.section} ${styles.featuredProjects}`}
+        aria-labelledby="featured-projects-title"
+      >
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Featured Projects</h2>
+            <h2 id="featured-projects-title" className={styles.sectionTitle}>
+              Featured Projects
+            </h2>
           </div>
           <div className={styles.projectsGrid}>
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} featured={true} />
+            {featuredProjects.map((project, idx) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                featured={true}
+                priority={idx === 0}
+              />
             ))}
           </div>
 
@@ -76,7 +102,12 @@ export default function HomePage() {
           )}
 
           <div className={styles.sectionActions}>
-            <Button href="/projects" variant="secondary" size="md">
+            <Button
+              href="/projects"
+              variant="secondary"
+              size="md"
+              aria-label="View all projects"
+            >
               View all projects
             </Button>
           </div>
@@ -84,8 +115,10 @@ export default function HomePage() {
       </section>
 
       {/* Services at a glance */}
+      <div className={styles.sectionDivider} aria-hidden="true" />
       <section
-        className={styles.servicesSummary}
+        id="services"
+        className={`${styles.section} ${styles.servicesSummary}`}
         aria-labelledby="services-title"
       >
         <div className={styles.container}>
@@ -100,7 +133,12 @@ export default function HomePage() {
             <li>Performance, SEO & accessibility</li>
           </ul>
           <div className={styles.sectionActions}>
-            <Button href="#contact" variant="primary" size="md">
+            <Button
+              href="#contact"
+              variant="primary"
+              size="md"
+              aria-label="Start a project"
+            >
               Start a project
             </Button>
           </div>
@@ -109,27 +147,31 @@ export default function HomePage() {
 
       {/* Single testimonial highlight for social proof */}
       {topTestimonial && (
-        <section
-          className={styles.miniTestimonial}
-          aria-labelledby="testimonial-title"
-        >
-          <div className={styles.container}>
-            <h2 id="testimonial-title" className={styles.sectionTitle}>
-              Client results
-            </h2>
-            <figure className={styles.miniTestimonialCard}>
-              <blockquote className={styles.miniQuote}>
-                “{topTestimonial.quote}”
-              </blockquote>
-              <figcaption className={styles.miniAttribution}>
-                <span className={styles.miniName}>{topTestimonial.name}</span>
-                <span className={styles.miniMeta}>
-                  {topTestimonial.role} at {topTestimonial.company}
-                </span>
-              </figcaption>
-            </figure>
-          </div>
-        </section>
+        <>
+          <div className={styles.sectionDivider} aria-hidden="true" />
+          <section
+            id="testimonial"
+            className={`${styles.section} ${styles.miniTestimonial}`}
+            aria-labelledby="testimonial-title"
+          >
+            <div className={styles.container}>
+              <h2 id="testimonial-title" className={styles.sectionTitle}>
+                Client results
+              </h2>
+              <figure className={styles.miniTestimonialCard}>
+                <blockquote className={styles.miniQuote}>
+                  “{topTestimonial.quote}”
+                </blockquote>
+                <figcaption className={styles.miniAttribution}>
+                  <span className={styles.miniName}>{topTestimonial.name}</span>
+                  <span className={styles.miniMeta}>
+                    {topTestimonial.role} at {topTestimonial.company}
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+        </>
       )}
 
       <ContactCTA />

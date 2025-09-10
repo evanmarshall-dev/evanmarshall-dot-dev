@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Tech Stack',
   description:
     'The technologies I use to build modern, scalable web applications: React, Next.js, TypeScript, Node.js, and more.',
+  alternates: { canonical: '/tech' },
 };
 
 export default function TechPage() {

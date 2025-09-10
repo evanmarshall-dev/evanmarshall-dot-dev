@@ -12,6 +12,16 @@ interface BreadcrumbsProps {
 }
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: item.label,
+      item: item.href ? `https://www.evanmarshall.dev${item.href}` : undefined,
+    })),
+  };
   return (
     <nav aria-label="Breadcrumb" className={styles.container}>
       <ol className={styles.list}>
@@ -37,6 +47,10 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
           );
         })}
       </ol>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </nav>
   );
 };

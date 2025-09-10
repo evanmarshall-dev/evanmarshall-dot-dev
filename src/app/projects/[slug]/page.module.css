@@ -1,0 +1,63 @@
+.page {
+  padding-block: var(--space-8);
+}
+
+.container {
+  inline-size: min(1100px, 100% - var(--space-8));
+  margin-inline: auto;
+}
+
+.header {
+  margin-block-end: var(--space-6);
+}
+
+.title {
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  color: var(--text-secondary);
+  margin-block-start: var(--space-3);
+}
+
+.heroImage {
+  margin-block: var(--space-6);
+  border-radius: var(--radius-lg);
+  overflow: clip;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-block: var(--space-6);
+}
+
+.meta dt {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.meta dd {
+  margin: 0;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.techList li {
+  background: var(--surface-2);
+  padding-inline: var(--space-2);
+  padding-block: 2px;
+  border-radius: var(--radius-md);
+}
+
+.links {
+  display: flex;
+  gap: var(--space-3);
+}

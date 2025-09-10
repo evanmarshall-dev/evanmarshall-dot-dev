@@ -3,6 +3,8 @@
    ============================================================================= */
 
 :root {
+  /* Layout measurements */
+  --nav-height: 64px;
   /* Colors - Custom OKLCH-based Professional Palette */
 
   /* Accent Colors - Based on oklch(.68 .2117 30.54) - Vibrant Orange-Red */
@@ -101,9 +103,9 @@
   --spacing-8: 2rem; /* 32px */
   --spacing-10: 2.5rem; /* 40px */
   --spacing-12: 3rem; /* 48px */
-  --spacing-16: 4rem; /* 64px */
-  --spacing-20: 5rem; /* 80px */
-  --spacing-24: 6rem; /* 96px */
+  --spacing-16: 3.5rem; /* 56px */
+  --spacing-20: 4.5rem; /* 72px */
+  --spacing-24: 5.5rem; /* 88px */
   --spacing-32: 8rem; /* 128px */
 
   /* Border Radius */
@@ -153,6 +155,13 @@
   --color-border: var(--color-secondary-200);
   --color-hover: var(--color-secondary-100);
   --color-active: var(--color-secondary-200);
+
+  /* HUD / Neon Utilities */
+  --hud-neon-1: oklch(0.85 0.22 200); /* cyan */
+  --hud-neon-2: oklch(0.8 0.23 330); /* magenta */
+  --hud-grid: color-mix(in oklab, var(--color-secondary-500) 20%, transparent);
+  --glow-outer: 0 0 32px color-mix(in oklab, var(--hud-neon-1) 40%, transparent);
+  --glow-inner: 0 0 8px color-mix(in oklab, var(--hud-neon-2) 60%, transparent);
 }
 
 /* =============================================================================
@@ -206,6 +215,23 @@
   --color-active: var(--color-secondary-700);
 }
 
+/* High Contrast Theme */
+[data-theme='high-contrast'] {
+  --color-background: #000;
+  --color-surface: #000;
+  --color-text-primary: #fff;
+  --color-text-secondary: #e6e6e6;
+  --color-text-tertiary: #ccc;
+  --color-border: #fff;
+  --color-hover: #111;
+  --color-active: #222;
+
+  /* Stronger focus and glows */
+  --shadow-sm: 0 0 0 2px #fff;
+  --shadow-md: 0 0 0 3px #fff;
+  --shadow-lg: 0 0 0 4px #fff;
+}
+
 /* =============================================================================
    GLOBAL STYLES
    ============================================================================= */
@@ -235,6 +261,26 @@ body {
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Display typography for headings */
+h1,
+h2,
+h3 {
+  font-family: var(--font-family-display, var(--font-family-primary));
+  letter-spacing: -0.02em;
+}
+h1 {
+  font-size: clamp(2.25rem, 4vw + 1rem, 3.25rem);
+  line-height: var(--line-height-tight);
+}
+h2 {
+  font-size: clamp(1.875rem, 3vw + 0.5rem, 2.5rem);
+  line-height: var(--line-height-tight);
+}
+h3 {
+  font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
+  line-height: var(--line-height-snug);
 }
 
 img,
@@ -272,6 +318,56 @@ h6 {
 :focus-visible {
   outline: 2px solid var(--color-primary-500);
   outline-offset: 2px;
+}
+
+/* User preferences: motion */
+[data-motion='reduced'] *,
+[data-motion='off'] * {
+  scroll-behavior: auto !important;
+}
+[data-motion='reduced'] * {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0ms !important;
+}
+[data-motion='off'] * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+/* User preferences: text size */
+html[data-text='sm'] body {
+  font-size: 0.9375rem;
+}
+html[data-text='md'] body {
+  font-size: 1rem;
+}
+html[data-text='lg'] body {
+  font-size: 1.125rem;
+}
+
+/* Utilities: subtle neon/glow and HUD grid */
+.u-neon-text {
+  color: var(--hud-neon-1);
+  text-shadow: 0 0 8px color-mix(in oklab, var(--hud-neon-1) 60%, transparent);
+}
+.u-glow {
+  box-shadow: var(--glow-inner), var(--glow-outer);
+}
+.u-hud-grid {
+  position: relative;
+}
+.u-hud-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--hud-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hud-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 70%);
 }
 
 /* Skip link for accessibility */
