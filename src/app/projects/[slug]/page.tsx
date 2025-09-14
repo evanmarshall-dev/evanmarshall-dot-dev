@@ -1,10 +1,11 @@
-import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import Breadcrumbs from '@/components/ui/Breadcrumbs';
-import type { Project } from '@/types';
-import projectsData from '@/data/projects.json';
-import styles from './page.module.css';
+import type { Metadata } from "next";
+import { cookies } from "next/headers";
+import Image from "next/image";
+import Link from "next/link";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import type { Project } from "@/types";
+import projectsData from "@/data/projects.json";
+import styles from "./page.module.css";
 
 interface PageProps {
   params: { slug: string };
@@ -19,28 +20,28 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const project = findProject(params.slug);
-  if (!project) return { title: 'Project Not Found' };
+  if (!project) return { title: "Project Not Found" };
 
   const url = `https://www.evanmarshall.dev/projects/${project.slug}`;
   const title = `${project.title} | Projects`;
   const description = project.description;
   const images = project.images?.length
     ? project.images
-    : ['/images/og-image.jpg'];
+    : ["/images/og-image.jpg"];
 
   return {
     title,
     description,
     alternates: { canonical: url },
     openGraph: {
-      type: 'article',
+      type: "article",
       title,
       description,
       url,
       images: images.map((u) => ({ url: u })),
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
       images,
@@ -48,7 +49,10 @@ export async function generateMetadata({
   };
 }
 
-export default function ProjectDetailPage({ params }: PageProps) {
+export default async function ProjectDetailPage({ params }: PageProps) {
+  const cookieStore = await cookies();
+  const nonce = cookieStore.get("__csp_nonce")?.value || "";
+
   const project = findProject(params.slug);
   if (!project) {
     return (
@@ -56,9 +60,9 @@ export default function ProjectDetailPage({ params }: PageProps) {
         <h1 className="sr-only">Project Not Found</h1>
         <Breadcrumbs
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'Projects', href: '/projects' },
-            { label: 'Not found' },
+            { label: "Home", href: "/" },
+            { label: "Projects", href: "/projects" },
+            { label: "Not found" },
           ]}
         />
         <div className={styles.container}>
@@ -74,8 +78,8 @@ export default function ProjectDetailPage({ params }: PageProps) {
       <h1 className="sr-only">{project.title}</h1>
       <Breadcrumbs
         items={[
-          { label: 'Home', href: '/' },
-          { label: 'Projects', href: '/projects' },
+          { label: "Home", href: "/" },
+          { label: "Projects", href: "/projects" },
           { label: project.title },
         ]}
       />
@@ -147,16 +151,17 @@ export default function ProjectDetailPage({ params }: PageProps) {
         {/* JSON-LD */}
         <script
           type="application/ld+json"
+          nonce={nonce}
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'CreativeWork',
+              "@context": "https://schema.org",
+              "@type": "CreativeWork",
               name: project.title,
               url: `https://www.evanmarshall.dev/projects/${project.slug}`,
               description: project.description,
               image: project.images || [],
               datePublished: `${project.year}-01-01`,
-              inLanguage: 'en-CA',
+              inLanguage: "en-CA",
             }),
           }}
         />

@@ -1,29 +1,3 @@
-# evanmarshall.dev Portfolio
+# Portfolio Web App: evanmarshall.dev
 
-## Development
-
-Use pnpm to install and run.
-
-```bash
-pnpm install
-pnpm dev
-```
-
-## Testing
-
-- Unit tests: Vitest + Testing Library
-- E2E tests: Playwright
-
-```bash
-pnpm exec vitest run
-pnpm exec playwright test
-```
-
-## Lighthouse CI (optional)
-
-Run a quick performance audit against the built app.
-
-```bash
-pnpm build
-pnpm run lh:ci
-```
+This is the source code for my personal portfolio website, [evanmarshall.dev](https://evanmarshall.dev). The site showcases my projects, skills, and experience as a developer.

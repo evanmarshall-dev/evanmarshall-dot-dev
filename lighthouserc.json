@@ -2,12 +2,16 @@
   "ci": {
     "collect": {
       "startServerCommand": "pnpm run start",
-      "startServerReadyPattern": "started server on",
+      "startServerReadyPattern": "Ready",
       "url": [
         "http://localhost:3000/",
         "http://localhost:3000/projects",
         "http://localhost:3000/services",
-        "http://localhost:3000/contact"
+        "http://localhost:3000/contact",
+        "http://localhost:3000/process",
+        "http://localhost:3000/testimonials",
+        "http://localhost:3000/faq",
+        "http://localhost:3000/about"
       ],
       "numberOfRuns": 1
     },
