@@ -107,12 +107,16 @@ jobs:
 
       - name: Build
         run: pnpm run build
+      - name: Package build output
+        run: |
+          # compress the .next folder to a single artifact for reliable upload/download
+          tar -czf next-build.tgz .next
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: next-build
-          path: .next
+          path: next-build.tgz
 
   lhci:
     name: Lighthouse CI
@@ -136,7 +140,18 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: next-build
-          path: .next
+          path: .
+
+      - name: Extract build artifact
+        run: |
+          # Extract the compressed .next artifact into the workspace
+          if [ -f next-build.tgz ]; then
+            tar -xzf next-build.tgz
+            rm next-build.tgz
+          else
+            echo "Artifact next-build.tgz not found after download"
+            exit 1
+          fi
 
       - name: Install Chromium (lightweight)
         run: |
