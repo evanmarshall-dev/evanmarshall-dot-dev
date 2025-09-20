@@ -10,7 +10,7 @@
 
 ---
 
-![evanmarshall.dev preview](./public/images/site-preview.png "evanmarshall.dev homepage preview")
+![evanmarshall.dev preview](./public/images/site-preview.jpg "evanmarshall.dev homepage preview")
 
 ## Overview
 
