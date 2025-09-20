@@ -1,67 +1,111 @@
-# evanmarshall.dev – Portfolio Web App
+# evanmarshall dot dev
 
-## TODO: Add preview image here.
+![Language: TypeScript](https://img.shields.io/badge/language-TypeScript-3178c6?logo=typescript&logoColor=white)
+![Framework: Next.js](https://img.shields.io/badge/Next.js-14.x-black?logo=nextdotjs)
+![CSS: Tailwind](https://img.shields.io/badge/Tailwind_CSS-3.x-38bdf8?logo=tailwindcss)
+![Deployed: Vercel](https://img.shields.io/badge/Deployed-Vercel-000?logo=vercel)
+![License: MIT](https://img.shields.io/badge/license-MIT-blue)
 
-This is the open-source codebase for [evanmarshall.dev](https://evanmarshall.dev), a modern developer portfolio website designed to showcase professional skills, experience, and projects. The site demonstrates clean architecture, performance best practices, and up-to-date frontend engineering standards.
+> **A modern, performant portfolio site to showcase projects, technical skills, and experience. Built with today’s best frontend practices and a scalable, maintainable architecture.**
 
-## Features
+---
 
-- **Modern, responsive design** for seamless viewing across devices and Accessibility standards (WCAG 2)
-- **Project and skills showcase** to highlight development expertise
-- **Fast and accessible**: optimized for speed and usability
-- **Scalable architecture**: easily adaptable for new content and integrations
+![evanmarshall.dev preview](./public/images/site-preview.png "evanmarshall.dev homepage preview")
 
-## Technology Stack
+## Overview
 
-- **Frameworks & Libraries:**
-  - [React](https://reactjs.org/)
-  - [Next.js](https://nextjs.org/) *(if used)*
-  - [TypeScript](https://www.typescriptlang.org/) *(if used)*
-  - [Tailwind CSS](https://tailwindcss.com/) *(if used)*
-  - [Styled Components](https://styled-components.com/) *(if used)*
+**evanmarshall.dev** is a professional developer portfolio and project showcase. This site is designed to highlight technical skills, frontend and full-stack experience, and a commitment to quality, accessibility, and performance. It features a clean, accessible UI, and serves as an ongoing platform for experimenting with CI/CD, testing, and headless CMS integration.
 
-- **Tooling & Infrastructure:**
-  - [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/) *(if used for deployment)*
-  - [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) for code quality
-  - [Jest](https://jestjs.io/) / [Testing Library](https://testing-library.com/) *(if used for testing)*
+### Core features
 
-## CI/CD & Testing
+- Responsive, accessible design (WCAG 2 AA)
+- Projects and skills showcase with live project links
+- Fast, SEO-optimized static and dynamic pages
+- Typed codebase for reliability and maintainability
+- Scalable structure for future features and integrations
 
-This project is a platform for experimenting with:
-- **CI/CD pipelines** for automated build, test, and deployment workflows (using GitHub Actions or similar)
-- **Automated testing**: Unit/integration tests to ensure code reliability
-- **Continuous deployment** to production
-
-## Future Plans
-
-- **Headless CMS integration** (e.g. Contentful, Sanity, Strapi) for dynamic content management
-- Additional features to further demonstrate full-stack skills
+---
 
 ## Getting Started
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/evanmarshall-dev/evanmarshall-dot-dev.git
-   ```
+### Prerequisites
 
-2. **Install dependencies:**
-   ```bash
-   pnpm install
-   # or
-   yarn install
-   ```
+- Node.js 18+
+- pnpm or yarn
 
-3. **Run the development server:**
-   ```bash
-   pnpm dev
-   # or
-   yarn dev
-   ```
+### Install and run
 
-4. **Build for production:**
-   ```bash
-   pnpm build
-   ```
+```sh
+pnpm install
+pnpm dev
+# or
+yarn install
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+### Scripts
+
+- `pnpm dev` – Start in dev/watch mode
+- `pnpm build` – Build for production
+- `pnpm start` – Run built app in production
+
+---
+
+## Project structure
+
+```text
+.
+├── public/
+│   └── images/
+│       └── site-preview.png
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── styles/
+│   └── utils/
+├── .eslintrc
+├── .prettierrc
+├── next.config.js
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+└── tsconfig.json
+```
+
+---
+
+## Technologies used
+
+- **Framework:** Next.js (React, SSR/SSG)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Linting/Formatting:** ESLint, Prettier
+- **Testing:** Jest, React Testing Library *(if used)*
+- **CI/CD:** GitHub Actions (experimenting with automated build/test/deploy)
+- **Deployment:** Vercel
+- *(Planned: headless CMS integration, e.g., Contentful, Sanity, or Strapi)*
+
+---
+
+## Configuration notes
+
+- Uses `.env` for environment variables if needed (e.g., analytics, CMS endpoints).
+- Static assets live in `/public`.
+- Code follows strict linting and formatting for consistency.
+
+---
+
+## Next steps & roadmap
+
+- Integrate a headless CMS for dynamic content management
+- Expand project and blog sections
+- Add visual theming and dark mode
+- Improve automated testing coverage and CI workflows
+- Incorporate Lighthouse/axe accessibility reports in CI
+
+---
 
 ## License
 
@@ -69,4 +113,4 @@ MIT
 
 ---
 
-*For questions or collaboration inquiries, please open an issue or reach out via [evanmarshall.dev](https://evanmarshall.dev).*
+*Questions, feedback, or collaboration proposals? [Contact via evanmarshall.dev](https://evanmarshall.dev) or open an issue.*
