@@ -6,6 +6,9 @@
 ![Deployed: Vercel](https://img.shields.io/badge/Deployed-Vercel-000?logo=vercel)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
 
+## Live Demo
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://www.evanmarshall.dev/)
+
 > **A modern, performant portfolio site to showcase projects, technical skills, and experience. Built with today’s best frontend practices and a scalable, maintainable architecture.**
 
 ---
